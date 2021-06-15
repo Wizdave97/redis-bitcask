@@ -240,7 +240,7 @@ impl Command {
     pub fn value(&self) -> Option<String> {
         match self {
             Self::Get { key: _ } | Self::Delete { key: _ } => None,
-            Self::Set { key, value: _ } | Self::Update { key, value: _ } => Some(key.clone()),
+            Self::Set { key: _, value} | Self::Update { key:_, value} => Some(value.clone()),
         }
     }
 }
